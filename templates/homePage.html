@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 20px;
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .food-card {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .food-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .food-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .food-card:hover .overlay {
+            opacity: 1;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <h1>Plate Planner - Plan your meal</h1>
+
+    <div class="container">
+        <a href="/foodTracker/foodOption?option=weight-loss" class="food-card">
+            <img src="/images/weight-loss.webp" alt="Weight Loss">
+            <div class="overlay">Weight Loss</div>
+        </a>
+
+        <a href="/foodTracker/foodOption?option=weight-gain" class="food-card">
+            <img src="/images/weight-gain.jpg" alt="Weight Gain">
+            <div class="overlay">Weight Gain</div>
+        </a>
+
+        <a href="/foodTracker/foodOption?option=optional" class="food-card">
+            <img src="/images/optional-day.jpg" alt="Optional Day">
+            <div class="overlay">Optional Day</div>
+        </a>
+
+        <a href="/foodTracker/foodOption?option=cheat-day" class="food-card">
+            <img src="/images/cheat-day.jpg" alt="Cheat Day">
+            <div class="overlay">Cheat Day</div>
+        </a>
+
+        <a href="/foodTracker/foodOption?option=protein-focused" class="food-card">
+            <img src="/images/protein-focused.jpg" alt="Protein Focused">
+            <div class="overlay">Protein Focused</div>
+        </a>
+
+        <a href="/foodTracker/foodOption?option=low-carb" class="food-card">
+            <img src="/images/low-carb.jpg" alt="Low Carb Day">
+            <div class="overlay">Low Carb Day</div>
+        </a>
+    </div>
+</body>
+</html>
